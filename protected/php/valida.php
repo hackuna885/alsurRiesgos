@@ -29,11 +29,28 @@ if($usuario === '' || $pass === ''){
 	$correoMd5 = (isset($correoMd5)) ?  $correoMd5 : '';
 	$passDecrypt = (isset($passDecrypt)) ?  $passDecrypt : '';
 
+	/*VALIDACIÓN DE CORREO*/
+
 	if($correoMd5 === $usuarioCript){
+
+		/*VALIDACIÓN DE PASSWORD*/
+
 		if($passDecrypt === $passCript){
-			echo json_encode('
-			<meta http-equiv="REFRESH" content="0; url=inicio/index.php">
-			');
+
+			/*VALIDACIÓN DE USUARIO ACTIVO*/
+			
+			if($usrActivo === '1'){
+				echo json_encode('
+				<meta http-equiv="REFRESH" content="0; url=inicio/home.app">
+				');
+			}else{
+				echo json_encode('
+				<div class="red lighten-5" style="padding: 0px 10px; margin-bottom: 20px;">
+					<p>Tu usuario esta bloqueado o inactivo</p>
+				</div>
+				');
+			}
+
 		}else{
 			echo json_encode('
 			<div class="red lighten-5" style="padding: 0px 10px; margin-bottom: 20px;">

@@ -12,24 +12,33 @@ Vue.component('ejemplo',{
             <div class="card-content">
                 <form id="formulario">
                     <div class="input-field">
-                        <input id="usuario" type="email" class="validate" name="usuario">
+                        <input id="usuario" type="email" class="validate" name="usuario" v-model="usuario">
                         <label for="usuario"><img src="img/icons/usr.svg" class="left" style="margin-right: 10px;">Usuario:</label>
                     </div>
                     <div class="input-field">
-                        <input id="pass" type="password" class="validate" name="pass">
+                        <input id="pass" type="password" class="validate" name="pass" v-model="pass">
                         <label for="pass"> <img src="img/icons/pw.svg" class="left" style="margin-right: 10px;">Contraseña:</label>
                     </div>
                     <div id="resultado">
                         
                     </div>
-                    <div style="height: 40px;">
+                    <div style="height: 40px;" v-if="usuario != '' && pass != ''">
                         <button class="btn blue darken-4 right" type="submit">Continuar</button>
+                    </div>
+                    <div style="height: 40px;" v-else>
+                        <button class="btn blue darken-4 right disabled" type="submit">Continuar</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
     `,
+    data() {
+        return{
+            usuario: '',
+            pass: ''
+        }
+    }
 })
 
 new Vue({
@@ -52,7 +61,7 @@ formulario.addEventListener('submit', function(e){
     .then(data => {
         if(data === 'error'){
             resultado.innerHTML = `
-            <div class="red lighten-5" style="margin-bottom: 20px; padding: 0px 20px;">
+            <div class="red lighten-5 red-text text-darken-4" style="margin-bottom: 20px; padding: 0px 20px;">
                 <p>Llena todos los campos</p>
             </div>
             `
@@ -64,3 +73,7 @@ formulario.addEventListener('submit', function(e){
     })
     
 })
+
+document.addEventListener('DOMContentLoaded', function() {
+    M.AutoInit();
+});

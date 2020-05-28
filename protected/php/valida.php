@@ -45,23 +45,23 @@ if($usuario === '' || $pass === ''){
 				');
 			}else{
 				echo json_encode('
-				<div class="red lighten-5" style="padding: 0px 10px; margin-bottom: 20px;">
-					<p>Tu usuario esta bloqueado o inactivo</p>
+				<div class="red lighten-5 red-text text-darken-4" style="padding: 0px 10px; margin-bottom: 20px;">
+					<i>Tu usuario esta bloqueado o inactivo</i>
 				</div>
 				');
 			}
 
 		}else{
 			echo json_encode('
-			<div class="red lighten-5" style="padding: 0px 10px; margin-bottom: 20px;">
-				<p>Contraseña no valida</p>
+			<div class="red lighten-5 red-text text-darken-4" style="padding: 0px 10px; margin-bottom: 20px;">
+				<i>Contraseña no valida</i>
 			</div>
 			');
 		}
 	}else{
 		echo json_encode('
-		<div class="red lighten-5" style="padding: 0px 10px; margin-bottom: 20px;">
-			<p>Usuario no valido</p>
+		<div class="red lighten-5 red-text text-darken-4" style="padding: 0px 10px; margin-bottom: 20px;">
+			<i>Usuario no valido</i>
 		</div>
 		');
 	}

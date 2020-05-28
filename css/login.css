@@ -1,0 +1,19 @@
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+}
+.fondo{
+    background: #0d47a1 url(../img/bg.jpg);
+    background-size:cover;
+    position:relative;
+    background-attachment: fixed;
+}
+:root {
+    --animate-delay: 0.7s;
+}

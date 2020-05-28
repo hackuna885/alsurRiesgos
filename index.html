@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <title>Login</title>
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100%;
+        }
+        .fondo{
+            background: #0d47a1 url(img/bg.jpg);
+            background-size:cover;
+            position:relative;
+            background-attachment: fixed;
+        }
+        :root {
+        --animate-delay: 0.7s;
+        }
+    </style>
+</head>
+<body class="fondo">
+    <div id="app">
+        <div style="width: 380px; padding: 30px;">
+            <div class="card animate__animated animate__fadeIn animate__delay-1s">
+                <div class="card-header blue darken-4">
+                    <div style="padding: 30px; text-align: center;">
+                        <img src="img/logo.svg" class="circle white" style="max-width: 150px; height: 150px; padding: 10px;">
+                    </div>
+                </div>
+                 <div class="card-content">
+                     <form id="formulario">
+                        <div class="input-field">
+                            <input id="usuario" type="email" class="validate" name="usuario">
+                            <label for="usuario"><img src="img/icons/usr.svg" class="left" style="margin-right: 10px;">Usuario:</label>
+                        </div>
+                        <div class="input-field">
+                            <input id="pass" type="password" class="validate" name="pass">
+                            <label for="pass"> <img src="img/icons/pw.svg" class="left" style="margin-right: 10px;">Contraseña:</label>
+                        </div>
+                        <div id="resultado">
+                            
+                        </div>
+                        <div style="height: 40px;">
+                            <button class="btn blue darken-4 right" type="submit">Continuar</button>
+                        </div>
+                     </form>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/materialize.min.js"></script>
+    <script src="assets/login.js"></script>
+    <script>
+        
+    </script>
+</body>
+</html>
